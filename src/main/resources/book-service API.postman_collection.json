@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "b20a5a0c-427b-4f23-90f5-c3078e4cc82a",
+		"name": "book-service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add A Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Ramayana\",\r\n    \"category\": \"Mythology\",\r\n    \"price\": 1200.00,\r\n    \"authorId\": {{authorId}},\r\n    \"publisher\": \"Hindu publication\",\r\n    \"publishedDate\": \"2020-11-23\",\r\n    \"content\": \"whole Ramayana stories\",\r\n    \"blocked\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/{{authorId}}/books",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"{{authorId}}",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update A Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Great Maratha\",\r\n    \"category\": \"History of Maratha\",\r\n    \"price\": 1300.00,\r\n    \"authorId\": {{authorId}},\r\n    \"publisher\": \"Sahydri publication\",\r\n    \"publishedDate\": \"2021-04-17\",\r\n    \"content\": \"Story of all maratha hero\",\r\n    \"blocked\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/{{authorId}}/books/{{bookId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"{{authorId}}",
+						"books",
+						"{{bookId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/{{authorId}}/books/{{bookId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"{{authorId}}",
+						"books",
+						"{{bookId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/books",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/books/{{bookId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"books",
+						"{{bookId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Books by author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/{{authorId}}/books",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"{{authorId}}",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "block/unblock a book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/api/v1/digitalbooks/{{authorId}}/books/{{bookId}}?block=false",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"digitalbooks",
+						"{{authorId}}",
+						"books",
+						"{{bookId}}"
+					],
+					"query": [
+						{
+							"key": "block",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
